@@ -1,0 +1,71 @@
+usernames = ['bob','Ann','mike','liz','liz']
+passwords = ['123','pass123','password123','pass123','1234']
+mezera = "----------------------------------------"
+print(mezera)
+print("Welcome to the app. Please log in:")
+name = input("USERNAME: ")
+password = input("PASSWORD: ")
+print(mezera)
+index = 0
+found = False
+
+while index < len(usernames):
+    if name.lower() == usernames[index] and password == passwords[index]:
+        found = True
+    index += 1
+if not found:
+    exit("USERNAME not found")
+
+TEXTS =[
+
+    "Hoj Mor ho detvo mojho rodu" ,
+    "kto kradmou rukou siahne na tvoju slobodu" ,
+    "a čo i dušu dáš v tom boji divokom."
+
+]
+
+
+user_choose = input('Enter a number btw. 1 and 3 to select: ')
+chosen_text = TEXTS[int(user_choose) - 1]
+
+all_words = (chosen_text.count(" ") + 1)
+print("There are", all_words, "words in the selected text.")
+
+count = 0
+for word in chosen_text.split(" "):
+    if word[0].isupper():
+        count = count + 1
+print("There are",count, "titlecase words")
+
+count = 0
+for word in chosen_text.split(" "):
+    if word.isupper():
+        count = count + 1
+print("There are", count, "uppercase words")
+
+count = 0
+for word in chosen_text.split(" "):
+    if word.islower():
+        count = count + 1
+print("There are",count, "lowercase words")
+
+count = 0
+sum_numeric = 0
+for word in chosen_text.split(" "):
+    if word.isnumeric():
+        count = count + 1
+        sum_numeric = sum_numeric + int(word)
+print("There are",count, "numeric strings")
+print(mezera)
+
+word_counts = {}
+for word in chosen_text.split(" "):
+    word_counts[len(word)] = word_counts.setdefault(len(word), 0) + 1
+
+for key in sorted(word_counts):
+    print(key,"*" * word_counts[key], word_counts[key])
+
+print(mezera)
+
+print("If we summed all the numbers in this text we would get: ", float(sum_numeric))
+print(mezera)

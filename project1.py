@@ -16,13 +16,6 @@ while index < len(usernames):
 if not found:
     exit("USERNAME not found")
 
-# TEXTS =[
-#
-#     "Hoj Mor ho detvo mojho rodu" ,
-#     "kto kradmou rukou siahne na tvoju slobodu" ,
-#     "a čo i dušu dáš v tom boji divokom."
-#
-# ]
 
 TEXTS = [
     "Situated about 10 miles west of Kemmerer, Fossil Butte is a ruggedly impressive topographic feature that rises sharply some 1000 feet above Twin Creek Valley to an elevation of more than 7500 feet above sea level. The butte is located just north of US 30N and the Union Pacific Railroad, which traverse the valley.",
@@ -36,11 +29,6 @@ TEXTS = [
 
 
 user_choice = input('Enter a number between 1 and 3 to select: ')
-# if int(user_choose) > 0:
-#     print(mezera)
-# elif int(user_choose) <= 3:
-#     print(mezera)
-# else: exit("wrong number")
 
 if int(user_choice) in range(1, 4) and user_choice.isnumeric():
     print(mezera)
